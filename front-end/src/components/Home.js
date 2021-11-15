@@ -1,12 +1,12 @@
 import React from 'react';
-import homeImg from './assets/fitness3.jpg'
+import homeImg from '../assets/fitness3.jpg'
 
 export default function Home(props) {
 
     return(
         <div>
-            <div className='container'>
-                <div className='left container'>
+            <div class="d-flex">
+                <div>
                     <div>
                         <h1>Welcome to Anywhere Fitness</h1>
                     </div>
@@ -17,7 +17,7 @@ export default function Home(props) {
                         <button>Register Now</button>
                     </div>
                 </div>
-                <div className='right container'>
+                <div>
                     <img src={homeImg} alt="A woman with a barbell on her back"/>
                 </div>
             </div>
