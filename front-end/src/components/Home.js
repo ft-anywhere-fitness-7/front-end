@@ -1,9 +1,9 @@
 import React from 'react';
 import homeImg from '../assets/fitness3.jpg'
-import './Home.css'
+import './Home.css';
+import { Link } from 'react-router-dom'
 
 export default function Home(props) {
-
     return(
         <div>
             <div className="container">
@@ -15,10 +15,10 @@ export default function Home(props) {
                         <p>THESE DAYS, FITNESS CLASSES CAN BE HELD ANYWHERE- A PARK, AN UNFINISHED BASEMENT OR A GARAGE- NOT JUST AT A TRADITIONAL GYM. CERTIFIED FITNESS INSTRUCTORS NEED AN EASY WAY TO TAKE THE AWKWARDNESS OUT OF ATTENDANCE TAKING AND CLIENT PAYMENT PROCESSING.</p>
                     </div>
                     <div className="register">
-                        <button>Register Now</button>
+                        <Link className="register-now" to='/register'>Register Now</Link>
                     </div>
                 </div>
-                <div className="right">
+                <div className="href='/register'">
                     <img src={homeImg} alt="A woman with a barbell on her back"/>
                 </div>
             </div>
