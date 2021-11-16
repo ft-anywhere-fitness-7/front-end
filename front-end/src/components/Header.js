@@ -3,25 +3,23 @@ import { Navbar, Nav, Container } from "react-bootstrap";
 
 
 const Header = (props) => {
-    
+    const { role, isLoggedIn } = props;
+
     const isLoggedIn = true;
     const role = "admin";
 
-
-        return (
-            <div>
-                <Navbar bg="light" variant="light">
-                    <Container>
-                        <Navbar.Brand href="#home">Anywhere Fitness</Navbar.Brand>
-                        <Nav className="me-auto">
-                        <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#">Sign In</Nav.Link>
-                        <Nav.Link href="#">Register</Nav.Link>
-                        </Nav>
-                    </Container>
-                </Navbar>
+    return(
+        <nav className="nav-bar">
+            <div className="left-links">
+                <Link className="link" to='/'>Home</Link>
             </div>
-        )
-    }
-
+            <div className="right-links">
+                {!isLoggedIn && <Link className="link" to='/signup'>Signup</Link>}
+                {!isLoggedIn && <Link className="link" to='/login'>Login</Link>}
+                {(role === 'admin' && isLoggedIn) && <Link className="link" to='/courses'>Classes</Link> }
+                {(role === 'admin' && isLoggedIn) && <Link className="link" to='/createCourse'>Create a Class</Link>}                
+            </div>
+        </nav>
+    )
+}
 export default Header;
