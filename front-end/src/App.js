@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 
 import Home from "./components/Home";
 
+import Register from "./components/Register";
 
 
 

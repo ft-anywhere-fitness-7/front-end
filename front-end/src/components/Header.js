@@ -1,9 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 
 
-export default class Header extends Component {
-    render () {
+const Header = (props) => {
+    
+    const isLoggedIn = true;
+    const role = "admin";
+
+
         return (
             <div>
                 <Navbar bg="light" variant="light">
@@ -19,4 +23,5 @@ export default class Header extends Component {
             </div>
         )
     }
-}
+
+export default Header;
