@@ -5,6 +5,7 @@ import Classes from "./components/Classes";
 import Register from "./components/Register";
 import { Route, Routes } from 'react-router-dom';
 
+
 function App() {
   return (
     <div className="App">
