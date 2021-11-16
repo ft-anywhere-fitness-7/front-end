@@ -1,7 +1,6 @@
 import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 
-
 const Header = (props) => {
     const { role, isLoggedIn } = props;
 
@@ -18,8 +17,5 @@ const Header = (props) => {
                 {!isLoggedIn && <Link className="link" to='/login'>Login</Link>}
                 {(role === 'admin' && isLoggedIn) && <Link className="link" to='/courses'>Classes</Link> }
                 {(role === 'admin' && isLoggedIn) && <Link className="link" to='/createCourse'>Create a Class</Link>}                
-            </div>
-        </nav>
-    )
-}
+
 export default Header;
