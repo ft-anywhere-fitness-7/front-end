@@ -1,6 +1,6 @@
 import React from 'react';
 import homeImg from '../assets/fitness3.jpg'
-import './Home.css'
+import './Home.css';
 
 export default function Home(props) {
 
