@@ -7,7 +7,9 @@ import Login from "./components/Login";
 import { Route, Routes } from 'react-router-dom';
 
 
+
 function App() {
+
 
   // To carry the whole classes 
   const [classes, setClasses] = useState([]);
