@@ -10,29 +10,15 @@ import Home from "./components/Home";
 function App() {
   return (
     <div className="App">
-
       <div className="content-wrap">
-     <div className="header-section">
-    <Header />
-    </div>
-      <h1>Fitness</h1>
-      <h1>Fitness</h1>
-      <h1>Fitness</h1>
-      <h1>Fitness</h1>
-      <h1>Fitness</h1>
-      <h1>Fitness</h1>
-      <h1>Fitness</h1>
-      <h1>Fitness</h1>
-      <h1>Fitness</h1>
-      <h1>Fitness</h1>
+        <div className="header-section">
+          <Header />
+        </div>
+        <Home />
+        <div className="footer-page">
+          <Footer/>
+        </div>
       </div>
-      <div className="footer-page">
-      <Footer/>
-      </div>
-
-      <Header />
-      <Home />
-
     </div>
     
   );
