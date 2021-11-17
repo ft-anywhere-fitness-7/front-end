@@ -1,5 +1,5 @@
 import React from 'react';
-import './Class.css'
+import '../CSS/Class.css'
 import { Link } from 'react-router-dom';
 
 export default function Class (props) {
