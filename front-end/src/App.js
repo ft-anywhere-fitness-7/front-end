@@ -2,9 +2,10 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Classes from "./components/Classes";
-import Register from "./components/Register";
+import Register from "./components/Register/Register";
 import Login from "./components/Login";
 import { Route, Routes } from 'react-router-dom';
+import React, {useState} from 'react';
 
 
 
