@@ -1,0 +1,12 @@
+.class-wrapper{
+    margin: 2%;
+    margin-right: 50%;
+    padding: 1%;
+    background-color: rgb(96, 163, 163);
+}
+.date{
+    margin: 2%;
+}
+.time{
+    margin: 2%;
+}

@@ -1,8 +1,16 @@
-import React, { useEffect, useState } from 'react';
-// import { array } from '../../../../../web-sprint-challenge-single-page-applications/node_modules/yup/lib/locale';
+import React from 'react';
+import './Class.css'
 
 export default function Class (props) {
     return(
-        <h1>{props.i.class_name}</h1>
+        <div className="class-wrapper">
+            <div>
+                <h1>{props.i.class_name}</h1>
+            </div>
+            <div>
+                <span className="date">Date: {props.i.class_date}</span>
+                <span className="time">Length: {props.i.class_duration}</span>
+            </div>
+        </div>
     )
 }

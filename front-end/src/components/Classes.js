@@ -21,7 +21,6 @@ export default function Classes (props) {
     console.log(allClasses);
     return(
         <div className='classes-wrapper'>
-            <h1>Classes here</h1>
             {allClasses.map(i => (
                 <Class i={i}/>
             ))}
