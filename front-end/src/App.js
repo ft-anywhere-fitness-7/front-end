@@ -35,6 +35,9 @@ function App() {
               <Route path="/register">
                 <Register />
               </Route> 
+              <Route path="/classes">
+                <Classes />
+              </Route> 
               <Route path='/create'>
                 <CreateClass />
               </Route>
