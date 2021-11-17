@@ -3,12 +3,13 @@ import { BrowserRouter } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import * as yup from "yup";
+//import "./Login.css";
 
 const formSchema = yup.object().shape({
     username: yup
         .string()
-        .email("Must be a valid email address.")
-        .required("Must include email address"),
+        .label("Username")
+        .required("Must include username"),
     password: yup
         .string()
         .required("Password is Required")
@@ -97,7 +98,7 @@ export default function Login (props){
                     </label>
                     <button disabled={disabled} class="btn btn-lg btn-primary btn block">Sign In</button>
                     <div className="footer-page">
-                        <Footer/>
+                        <Footer/> 
                     </div>
                 </form>
             </div>
