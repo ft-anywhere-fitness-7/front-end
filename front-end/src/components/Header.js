@@ -14,12 +14,13 @@ const Header = (props) => {
         <nav className="nav-bar">
             <div className="left-links">
                 <Link className="link" to='/'>Home</Link>
+                {!isLoggedIn && <Link className="link" to='/classes'>Our Classes</Link>}
             </div>
             <div className="right-links">
                 {!isLoggedIn && <Link className="link" to='/register'>Signup</Link>}
                 {!isLoggedIn && <Link className="link" to='/login'>Login</Link>}
-                {(role === 'admin' && isLoggedIn) && <Link className="link" to='/courses'>Classes</Link> }
-                {(role === 'admin' && isLoggedIn) && <Link className="link" to='/createCourse'>Create a Class</Link>}                
+                {(role === 'admin' && isLoggedIn) && <Link className="link" to='/courses'>Classes</Link>}
+                {(role === 'admin' && isLoggedIn) && <Link className="link" to='/createCourse'>Create a Class</Link>}         
             </div>
         </nav>
     )
