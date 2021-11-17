@@ -1,33 +1,65 @@
-import React from 'react';
+import React, { useState } from 'react';
 
+export default function Register () {
 
-export default function Register (props) {
-    
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [role, setRole] = useState('');
 
-    const { values, submit, change, disbaled, errors} = props;
+    const [submitted, setSubmitted] = useState(false);
+    const [error, setError] = useState(false);
 
-    const onSubmit = evt => {
-        evt.preventDefault()
-        submit()
+    const handleUsername = evt => {
+        setUsername(evt.target.value);
+        setSubmitted(false);
+    };
+
+    const handlePassword = evt => {
+        setPassword(evt.target.value);
+        setSubmitted(false);
+    };
+
+    const handleRole = evt => {
+        setRole(evt.target.value);
+        setSubmitted(false);
     }
 
-    const onChange = evt => {
-        const { name, value, checked, type } = evt.target
-        const realValue = type === 'checkbox' ? checked : value;
-        change(name, realValue)
+    const handleSubmit = evt => {
+        evt.preventDefault();
+        if (username === '' || password === ''){
+            setError(true);
+        } else {
+            setSubmitted(true);
+            setError(false);
+        }
+    };
+
+    const successMessage = () => {
+        return (
+            <div className="success" style ={{display: submitted ? '' : 'none',}}>
+                <h1>{username} successfully registered!</h1>
+            </div>
+        );
+    };
+
+    const errorMessage = () => {
+        return (
+            <div className="error" style={{display: error ? '' : 'none',}}>
+                <h1>Please fill out all fields.</h1>
+            </div>
+        )
     }
+
+
 
     return (
-        <form className="form container" onSubmit={onSubmit}>
+        <form className="form container" >
             <div className="form-group submit">
                 <h2>Register here!</h2>
 
-                <button disabled={disbaled}>submit</button>
-
-                <div className="errors">
-                    <div>{errors.username}</div>
-                    <div>{errors.password}</div>
-                    <div>{errors.role}</div>
+                <div className="messages">
+                    {errorMessage()}
+                    {successMessage()}
                 </div>
             </div>
             <div className="form-group submit">
@@ -35,8 +67,8 @@ export default function Register (props) {
 
                 <label>Username
                     <input
-                    value = {values.username}
-                    onChange = {onChange}
+                    value = {username}
+                    onChange = {handleUsername}
                     name = 'username'
                     type ='text'
                     placeholder = 'Please enter a username'
@@ -44,8 +76,8 @@ export default function Register (props) {
                 </label>
                 <label>Password
                     <input 
-                    value = {values.password}
-                    onChange = {onChange}
+                    value = {password}
+                    onChange = {handlePassword}
                     name = 'password'
                     type = 'password'
                     placeholder = 'Please enter a password'
@@ -53,8 +85,8 @@ export default function Register (props) {
                 </label>
                 <label>Role
                     <select
-                    onChange = {onChange}
-                    value = {values.role}
+                    onChange = {handleRole}
+                    value = {role}
                     name = 'role'
                     >
                         <option value =''>--select an option--</option>
@@ -62,6 +94,7 @@ export default function Register (props) {
                         <option value ='instructor'>instructor</option>
                     </select>
                 </label>
+                <button onClick={handleSubmit} className="btn" type="submit">Submit</button>
             </div>
         </form>
     )
