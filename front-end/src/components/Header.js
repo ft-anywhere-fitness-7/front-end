@@ -6,8 +6,8 @@ import '../CSS/Header.css';
 const Header = (props) => {
     // const { role, isLoggedIn } = props;
 
-    const isLoggedIn = true;
-    const role = "admin";
+    const isLoggedIn = false;
+    const role = "instructor";
 
     return(
         <nav className="nav-bar">
