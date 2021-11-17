@@ -26,10 +26,18 @@ function App() {
         </div>
         <div className='display'>
             <Switch>
-              <Route exact path='/' element={<Home/>}/>
-              <Route exact path='/login' element={<Login/>}/>
-              <Route exact path='/register' element={<Register/>}/>
-              <Route exact path='/classes' element={<Classes/>}/>
+              <Route exact path="/"> 
+              <Home />           
+              </Route>        
+              <Route path="/login">
+                <Login />
+              </Route> 
+              <Route path="/register">
+                <Register />
+              </Route> 
+
+              {/* <Route exact path='/classes' element={Classes}/> */}
+
             </Switch>
         </div>
         <div className="footer-page">
