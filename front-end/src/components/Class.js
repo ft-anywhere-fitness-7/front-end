@@ -1,5 +1,6 @@
 import React from 'react';
 import './Class.css'
+import { Link } from 'react-router-dom';
 
 export default function Class (props) {
     return(
@@ -19,6 +20,9 @@ export default function Class (props) {
             <div>
                 <span className="instructor">Date: {props.i.instructor}</span>
                 <span className="location">Location: {props.i.class_location}</span>
+            </div>
+            <div>
+                <Link className="join-class" to='/login'>Join this class</Link>
             </div>
         </div>
     )
