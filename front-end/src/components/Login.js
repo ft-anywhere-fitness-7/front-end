@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter } from "react-router-dom";
-import Header from "./Header";
-import Footer from "./Footer";
+//import Header from "./Header";
+//import Footer from "./Footer";
 import * as yup from "yup";
 //import "./Login.css";
 
@@ -68,7 +68,7 @@ export default function Login (props){
             </div>
                 <form>
                     <div className="header-section">
-                        <Header />
+                        {/*<Header />*/}
                     </div>
                     <h1 class= "mb-3">Please sign in</h1>
                     <label for="username" class="sr-only mb-4"> 
@@ -98,7 +98,7 @@ export default function Login (props){
                     </label>
                     <button disabled={disabled} class="btn btn-lg btn-primary btn block">Sign In</button>
                     <div className="footer-page">
-                        <Footer/> 
+                        {/*<Footer/> */}
                     </div>
                 </form>
             </div>
