@@ -4,8 +4,7 @@ import Home from "./components/Home";
 import Classes from "./components/Classes";
 import Register from "./components/Register";
 import Login from "./components/Login";
-import { Route, Routes } from 'react-router-dom';
-
+import {Route, Switch } from 'react-router-dom';
 import React, { useState } from 'react';
 
 function App() {
@@ -26,12 +25,12 @@ function App() {
           <Header />
         </div>
         <div className='display'>
-            <Routes>
+            <Switch>
               <Route exact path='/' element={<Home/>}/>
               <Route exact path='/login' element={<Login/>}/>
               <Route exact path='/register' element={<Register/>}/>
               <Route exact path='/classes' element={<Classes/>}/>
-            </Routes>
+            </Switch>
         </div>
         <div className="footer-page">
           <Footer/>
