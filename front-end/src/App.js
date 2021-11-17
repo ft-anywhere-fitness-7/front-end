@@ -12,12 +12,12 @@ function App() {
 
 
   // To carry the whole classes 
-  const [classes, setClasses] = useState([]);
+  // const [classes, setClasses] = useState([]);
 
   // The state for header
-  const isLoggedIn = localStorage.getItem('token');
-  const role = localStorage.getItem('role');
-  const username = localStorage.getItem('username');
+  // const isLoggedIn = localStorage.getItem('token');
+  // const role = localStorage.getItem('role');
+  // const username = localStorage.getItem('username');
 
   return (
     <div className="App">
