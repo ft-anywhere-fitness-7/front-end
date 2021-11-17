@@ -6,7 +6,7 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import {Route, Switch } from 'react-router-dom';
 import React, { useState } from 'react';
-
+import CreateClass from "./components/CreateClass";
 function App() {
 
 
@@ -38,7 +38,9 @@ function App() {
               <Route path="/classes">
                 <Classes />
               </Route> 
-
+              <Route path='/create'>
+                <CreateClass />
+              </Route>
               {/* <Route exact path='/classes' element={Classes}/> */}
 
             </Switch>
