@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <div className="content-wrap">
-       {/* <div className="header-section">
+       <div className="header-section">
           <Header />
         </div>
         <div className='display'>
@@ -24,7 +24,7 @@ function App() {
         </div>
         <div className="footer-page">
           <Footer/>
-  </div>*/}
+  </div>
         <div className="login">
           <Login/>
         </div>
