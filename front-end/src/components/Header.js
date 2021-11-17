@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import '../CSS/Header.css';
+import './CSS/Header.css';
+
 
 const Header = (props) => {
     // const { role, isLoggedIn } = props;
@@ -15,7 +16,7 @@ const Header = (props) => {
                 <Link className="link" to='/'>Home</Link>
             </div>
             <div className="right-links">
-                {!isLoggedIn && <Link className="link" to='/signup'>Signup</Link>}
+                {!isLoggedIn && <Link className="link" to='/register'>Signup</Link>}
                 {!isLoggedIn && <Link className="link" to='/login'>Login</Link>}
                 {(role === 'admin' && isLoggedIn) && <Link className="link" to='/courses'>Classes</Link> }
                 {(role === 'admin' && isLoggedIn) && <Link className="link" to='/createCourse'>Create a Class</Link>}                
