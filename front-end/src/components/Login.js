@@ -65,10 +65,10 @@ export default function Login (props){
                             onChange={handleChange}
                         />
                     </label>
-                    <button className="login-button-2">Login</button>
+                    <Link className="login-button-2">Login</Link>
                 </form> 
                     <div className="no-account">Don't have an account?
-                    <button className="login-button-3"><Link className="login-button-2" to='/register'>Register</Link></button> 
+                    <Link className="login-button-3" to='/register'>Register</Link> 
                     {/* <p className="special-p">Don't have an account?<Link className="link-1" to='/register'>Register</Link></p> */}
                     </div>
                
