@@ -64,8 +64,8 @@ export default function Register (props) {
     }
 
     return (
-        <form className="form-container" >
-            <div className="form-group submit">
+        <form className="register-container" >
+            <div className="register-here">
                 <h2>Register here!</h2>
 
                 <div className="messages">
@@ -73,12 +73,12 @@ export default function Register (props) {
                     {successMessage()}
                 </div>
             </div>
-            <div className="form-group submit">
-                <h6>Enter information below</h6>
+            <div className="register-inputs">
+                <h6 className="enter-information">Enter information below</h6>
 
-                <label className="form-label">Username:
+                <label className ="register-inputs">Username:
                     <input
-                    className ="form-input"
+                    className ="register-inputs"
                     value = {newUser.username}
                     onChange={handleChange}
                     name = 'username'
@@ -86,18 +86,20 @@ export default function Register (props) {
                     placeholder = 'Please enter a username'
                     />
                 </label>
-                <label> Password:
+                <label className ="register-inputs"> Password:
                     <input 
                         type="password"
                         name="password"
+                        className="register-inputs"
                         placeholder="Enter your password"
                         value={newUser.password}
                         onChange={handleChange}
                     />
                 </label>
-                <label className="form-label">Role:
+                <label className ="register-inputs">Role:
                     <select
                     // className ="form-role"
+                    className ="register-inputs"
                     onChange={handleChange}
                     value = {newUser.role}
                     name = 'role_type'
@@ -107,8 +109,8 @@ export default function Register (props) {
                         <option value ='instructor'>Instructor</option>                        
                     </select>
                 </label>
-                <p>As a instructor, please type your auth_code to be registered</p>
-                 <label> Auth_code:
+                <p className ="register-inputs">As a instructor, please type your auth_code to be registered</p>
+                 <label className ="register-inputs"> Auth_code:
                     <input 
                         type="text"
                         name="auth_code"
@@ -118,7 +120,7 @@ export default function Register (props) {
                     />
                 </label>
 
-                <button onClick={handleSubmit} className="btn" type="submit">Submit</button>
+                <button onClick={handleSubmit} className ="register-button" type="submit">Submit</button>
             </div>
         </form>
     )
