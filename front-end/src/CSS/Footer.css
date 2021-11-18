@@ -17,6 +17,11 @@
     display: flex;
     justify-content: space-between;
 }
+.row{
+    display: flex;
+    justify-content: center;
+    margin-left: 17%;
+}
 .button {
     display: flex;
     justify-content: center;

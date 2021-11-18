@@ -17,7 +17,7 @@ export default function Home(props) {
         <div className="header-section">
           {/* <Header isLoggedIn = { isLoggedIn } role = { role }  message = { message } /> */}
         </div>
-            <div className="container">
+            <div className="home-container">
                 <div>
                     <div className="left">
                         <h1>Welcome to Anywhere Fitness</h1>
