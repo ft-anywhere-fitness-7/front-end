@@ -31,7 +31,14 @@ function App() {
     <div className="App">
       <div className="content-wrap">
         <div className="header-section">
-          <Header isHomePage = { isHomePage } isRegPage = { isRegPage } isLoginPage = { isLoginPage }  isLoggedIn = { isLoggedIn } role = { role }  message = { message } />
+          <Header 
+              isHomePage = { isHomePage } 
+              isRegPage = { isRegPage } 
+              isLoginPage = { isLoginPage }  
+              isLoggedIn = { isLoggedIn } 
+              role = { role }  
+              message = { message } 
+              />
         </div>
         <div className='display'>
             <Switch>
