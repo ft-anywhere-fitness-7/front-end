@@ -9,6 +9,7 @@ import {Route, Switch } from 'react-router-dom';
 import React, { useState } from 'react';
 import CreateClass from "./components/CreateClass";
 import UserList from './components/UserList'
+import User from './components/User'
 
 
 
@@ -28,6 +29,10 @@ function App() {
   // const isLoggedIn = localStorage.getItem('token');
   const role = localStorage.getItem('role');
   const message = localStorage.getItem('message');
+
+  const deleteUser = (id)=> {
+    
+  }
 
   return (
     <div className="App">
@@ -51,16 +56,17 @@ function App() {
                 <Login setIsLoggedIn = { setIsLoggedIn } />
               </Route> 
               <Route path="/logout">
-                <Logout 
-                setIsLoggedIn = { setIsLoggedIn } 
-                setIsHomePage = { setIsHomePage }  
-                setIsRegPage = { setIsRegPage }  
-                setIsLoginPage = { setIsLoginPage }  
-                />
+                <Logout setIsLoggedIn = { setIsLoggedIn } setIsHomePage = { setIsHomePage }  setIsRegPage = { setIsRegPage } setIsLoginPage = { setIsLoginPage }  />
               </Route> 
               <Route path="/register">
                 <Register />
               </Route> 
+
+              <Route
+              path="/user"
+              render={props => <User {...props} deleteMovie={deleteUser} />}              
+              />
+
               <Route path="/users">
               <UserList users = { users } setUsers = { setUsers } />
               </Route> 

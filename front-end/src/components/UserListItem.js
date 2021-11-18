@@ -9,16 +9,14 @@ const MovieListItem = (props)=> {
 
     return(<div className="class-wrapper">
             <div>
-                <h5>{user_id}</h5>            
-                <h5>{username}</h5>
-                <h5> {role_type}   </h5>           
-            
-                
+                <h5> {user_id} </h5>            
+                <h5> {username} </h5>
+                <h5> {role_type} </h5>                 
             </div>
             
-            <div>
-                {/* <Link className="join-class" to='/login'>Join this class</Link> */}
-            </div>
+            <Link to={`/user`} >
+                <input type="button" value="View"/>
+            </Link>
         </div>
         );
 }

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import User from './User';
 import axiosWithAuth from '../utils/axiosWithAuth';
-import UserListTable from "./UserListTable"
+import UserListItem from "./UserListItem"
 
 export default function Users (props) {
 
@@ -25,7 +25,7 @@ export default function Users (props) {
     return(
         <div>
             {
-                users.map(user=><UserListTable key={user.id} user={user}/>)
+                users.map(user=><UserListItem key={user.id} user={user}/>)
             }
         </div>
     );
