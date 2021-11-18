@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import "../CSS/Footer.css";
 
 
@@ -9,11 +10,10 @@ const Footer = () => {
             <div className="container">
                 <div className="row">
                     <div className="col">
-                        <h4>Anywhere Fitness</h4>
-                        <ul className="list-unstyled">
-                            <li>Sign In</li>
-                            <li>Register</li>
-                        </ul>
+                    <Link className="home-button" to='/'>Anywhere Fitness</Link>
+                    <Link className="button" to='/classes'>Browse Classes</Link>
+                    <Link className="button" to='/login'>Login</Link>
+                    <Link className="button" to='/register'>Register</Link>
                     </div>
                     <div className="col">
                         <h4>Meet the team!</h4>
@@ -29,11 +29,12 @@ const Footer = () => {
                     </div>
                     <hr />
                     <div className="row">
-                        <p className="col-sm">
+                        <p className="col-sm copyright">
                             &copy;{new Date().getFullYear()} Anywhere Fitness | All rights reserved | Terms of Service | Privacy
                         </p>
                     </div>
                 </div>
+                
             </div>
         </div>
     )
