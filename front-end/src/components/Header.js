@@ -7,7 +7,7 @@ import '../CSS/Header.css';
 const Header = (props) => {
     // const { role, isLoggedIn } = props;
 
-    const isLoggedIn = false;
+    const isLoggedIn = true;
     const role = "instructor";
 
     return(
@@ -18,9 +18,11 @@ const Header = (props) => {
             </div>
             <div className="right-links">
                 {!isLoggedIn && <Link className="link" to='/register'>Signup</Link>}
-                {!isLoggedIn && <Link className="link" to='/login'>Login</Link>}
-                {(role === 'admin' && isLoggedIn) && <Link className="link" to='/courses'>Classes</Link>}
-                {(role === 'admin' && isLoggedIn) && <Link className="link" to='/createCourse'>Create a Class</Link>}         
+                {!isLoggedIn && <Link className="link" to='/login'>Login</Link>}               
+                {(role === 'instructor' && isLoggedIn) && <Link className="link" to='/create'>Create a Class</Link>}  
+                {/* {(role === 'instructor' && isLoggedIn) && <Link className="link" to='/classes'>Classes</Link>} */}
+                {isLoggedIn && <Link className="link" to='/logout'>Logout</Link>}
+                     
             </div>
         </nav>
     )

@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import { useHistory, Link } from 'react-router-dom';
 import axios from 'axios';
 
+// can not replace real url in post, figure out later
+import { BASE_URL, API_KEY } from '../utils/URL';  
+
+console.log('BASE_URL: ', BASE_URL);
+
 export default function Login (props){
 
         const { push } = useHistory();
