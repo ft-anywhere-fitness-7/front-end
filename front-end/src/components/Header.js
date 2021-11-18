@@ -17,7 +17,7 @@ const Header = (props) => {
                 {(props.isLoginPage && !props.isLoggedIn ) && 
                     <div className="link"  > <span>Need a account? &nbsp; </span> <Link to='/register' >Register</Link></div>}
                 {(!props.isLoginPage && !props.isLoggedIn ) &&  
-                    <div className="link" > <span>Already a member? &nbsp; </span> <Link to='/login' >  Login </Link> </div>}                
+                    <div className="member" > <span>Already a member?&nbsp; </span> <Link className="login-button" to='/login'>  Login </Link> </div>}                
                                      
                 {(props.role === 'instructor' && props.isLoggedIn) && 
                     <Link className="link" to='/create'>Create a Class</Link>}  
