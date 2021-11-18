@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useHistory, Link } from 'react-router-dom';
 import axios from 'axios';
 import Header from './Header';
+import '../CSS/Login.css'
 // can not replace real url in post, figure out later
 import { BASE_URL, API_KEY } from '../utils/URL';  
 
@@ -43,11 +44,11 @@ export default function Login (props){
 
         return (<div className="container">
             {/* <Header isLoggedIn = { isLoggedIn } role = { role }  message = { message } /> */}
-            <div >                
-                <form onSubmit={handleSubmit} >
-                    <h1 className= "mb-3">Please sign in</h1>
+            <div className="login-container">                
+                <form onSubmit={handleSubmit} className="user-pass-form">
+                    <h1 className= "signin">Please sign in</h1>
                     <label htmlFor="username" className="sr-only mb-4"> 
-                        <input 
+                        <input className="user-pass-form-element"
                             type="text"
                             name="username"
                             placeholder="Enter your username"
@@ -55,7 +56,7 @@ export default function Login (props){
                             onChange={handleChange}
                         />
                     </label>
-                    <label htmlFor="password">
+                    <label className="user-pass-form-element" htmlFor="password">
                         <input 
                             type="password"
                             name="password"
@@ -64,10 +65,10 @@ export default function Login (props){
                             onChange={handleChange}
                         />
                     </label>
-                    <button className="btn btn-lg btn-primary btn block">Login</button>
+                    <button className="login-button-2">Login</button>
                 </form> 
-                    <div>Don't have an account?
-                    <button className="btn btn-lg btn-primary btn block"><Link className="link-1" to='/register'>Register</Link></button> 
+                    <div className="no-account">Don't have an account?
+                    <button className="login-button-3"><Link className="login-button-2" to='/register'>Register</Link></button> 
                     {/* <p className="special-p">Don't have an account?<Link className="link-1" to='/register'>Register</Link></p> */}
                     </div>
                
