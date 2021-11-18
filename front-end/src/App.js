@@ -8,6 +8,7 @@ import Logout from "./components/Logout";
 import {Route, Switch } from 'react-router-dom';
 import React, { useState } from 'react';
 import CreateClass from "./components/CreateClass";
+import UserList from './components/UserList'
 
 
 
@@ -60,13 +61,17 @@ function App() {
               <Route path="/register">
                 <Register />
               </Route> 
+              <Route path="/users">
+              <UserList users = { users } setUsers = { setUsers } />
+              </Route> 
+              
               <Route path="/classes">
                 <Classes />
               </Route> 
               <Route path='/create'>
                 <CreateClass />
               </Route>
-              <Route exact path='/classes' element={Classes}/>
+              {/* <Route exact path='/classes' element={Classes}/> */}
 
             </Switch>
         </div>
