@@ -66,7 +66,7 @@ function App() {
               <Route path='/create'>
                 <CreateClass />
               </Route>
-              {/* <Route exact path='/classes' element={Classes}/> */}
+              <Route exact path='/classes' element={Classes}/>
 
             </Switch>
         </div>
