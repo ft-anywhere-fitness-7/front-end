@@ -22,11 +22,11 @@ function App() {
               <Route exact path='/classes' element={<Classes/>}/>
             </Routes>
         </div>
+        <div className="login">
+          <Login />
+        </div>
         <div className="footer-page">
           <Footer/>
-  </div>
-        <div className="login">
-          <Login/>
         </div>
       </div>
     </div>
