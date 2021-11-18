@@ -5,11 +5,12 @@ import axios from 'axios';
 
 export default function Register (props) {
 
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const [role, setRole] = useState('');
+    // const [username, setUsername] = useState('');
+    // const [password, setPassword] = useState('');
+    // const [role, setRole] = useState('');
 
     const [submitted, setSubmitted] = useState(false);
+
     const [error, setError] = useState(false);
 
     const { push } = useHistory();
@@ -28,19 +29,31 @@ export default function Register (props) {
     }
     const handleSubmit = evt => {
         evt.preventDefault();
-        if (username === '' || password === ''){
+        console.log('I am click the register button'); 
+        axios.post(`https://ft-anywherefitness-7.herokuapp.com/api/auth/register`, newUser)
+            .then(resp => {
+                console.log('resp.data in Register.js: ', resp.data);
+                alert(`Your role is: ${resp.data.role}, you need your prop role to do something!`);
+                push('/login');
+            })
+            .catch(err => {
+                console.log(err);
+            })
+
+        if (newUser.username === '' || newUser.password === ''){
             setError(true);
-        } else {
-            setSubmitted(true);
-            setError(false);
+        } 
+        // else {
+        //     setSubmitted(true);
+        //     setError(false);
             
-        }
+        // }
     };
 
     const successMessage = () => {
         return (
             <div className="success" style ={{display: submitted ? '' : 'none',}}>
-                <h1>{username} successfully registered!</h1>
+                <h1>{newUser.username} successfully registered!</h1>
             </div>
         );
     };
@@ -52,8 +65,6 @@ export default function Register (props) {
             </div>
         )
     }
-
-
 
     return (
         <form className="form-container" >
@@ -68,32 +79,34 @@ export default function Register (props) {
             <div className="form-group submit">
                 <h6>Enter information below</h6>
 
-                <label className="form-label">Username
+                <label className="form-label">Username:
                     <input
                     className ="form-input"
-                    value = {username}
+                    value = {newUser.username}
                     onChange={handleChange}
                     name = 'username'
                     type ='text'
                     placeholder = 'Please enter a username'
                     />
                 </label>
-                <label> Department:
-                    <select name="department" onChange={handleChange}>
-                        <option value="">---Select your role---</option>
-                        <option value="buyer">Buyer</option>
-                        <option value="seller">Seller</option>
-                    </select>
+                <label> Password:
+                    <input 
+                        type="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        value={newUser.password}
+                        onChange={handleChange}
+                    />
                 </label>
-                <label className="form-label">Role
+                <label className="form-label">Role:
                     <select
                     className ="form-role"
                     onChange={handleChange}
-                    value = {role}
-                    name = 'role'
+                    value = {newUser.role}
+                    name = 'role_type'
                     >
                         <option value =''>--select an option--</option>
-                        <option value ='student'>Student</option>
+                        <option value ='client'>Client</option>
                         <option value ='instructor'>Instructor</option>
                     </select>
                 </label>
