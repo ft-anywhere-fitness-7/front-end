@@ -5,10 +5,6 @@ import axios from 'axios';
 
 export default function Register (props) {
 
-    // const [username, setUsername] = useState('');
-    // const [password, setPassword] = useState('');
-    // const [role, setRole] = useState('');
-
     const [submitted, setSubmitted] = useState(false);
 
     const [error, setError] = useState(false);
@@ -33,7 +29,7 @@ export default function Register (props) {
         axios.post(`https://ft-anywherefitness-7.herokuapp.com/api/auth/register`, newUser)
             .then(resp => {
                 console.log('resp.data in Register.js: ', resp.data);
-                alert(`Your role is: ${resp.data.role}, you need your prop role to do something!`);
+                // alert(`Your role is: ${resp.data.role}, you need your prop role to do something!`);
                 push('/login');
             })
             .catch(err => {
@@ -108,6 +104,19 @@ export default function Register (props) {
                         <option value =''>--select an option--</option>
                         <option value ='client'>Client</option>
                         <option value ='instructor'>Instructor</option>
+                        
+                    </select>
+                </label>
+                {/* <p>Please key in auth_code, if you are a instructor</p> */}
+                <label className="form-label"> Instructor Auth_code:
+                    <select
+                    className ="form-role"
+                    onChange={handleChange}
+                    value = {newUser.auth_code}
+                    name = 'auth_code'
+                    >
+                        <option value =''>--select an auth_code--</option>                        
+                        <option value ='auth_instructor_123'>auth_code</option>
                     </select>
                 </label>
                 <button onClick={handleSubmit} className="btn" type="submit">Submit</button>

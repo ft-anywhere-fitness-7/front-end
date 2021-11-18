@@ -47,22 +47,22 @@ export default function Login (props){
                 <form onSubmit={handleSubmit} >
                     <h1 className= "mb-3">Please sign in</h1>
                     <label htmlFor="username" className="sr-only mb-4"> 
-                            <input 
-                                type="text"
-                                name="username"
-                                placeholder="Enter your username"
-                                value={login.username}
-                                onChange={handleChange}
-                            />
+                        <input 
+                            type="text"
+                            name="username"
+                            placeholder="Enter your username"
+                            value={login.username}
+                            onChange={handleChange}
+                        />
                     </label>
                     <label htmlFor="password">
-                            <input 
-                                type="password"
-                                name="password"
-                                placeholder="Enter your password"
-                                value={login.password}
-                                onChange={handleChange}
-                            />
+                        <input 
+                            type="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            value={login.password}
+                            onChange={handleChange}
+                        />
                     </label>
                     <button className="btn btn-lg btn-primary btn block">Login</button>
                 </form> 
