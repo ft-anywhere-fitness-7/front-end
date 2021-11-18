@@ -8,32 +8,47 @@ import Logout from "./components/Logout";
 import {Route, Switch } from 'react-router-dom';
 import React, { useState } from 'react';
 import CreateClass from "./components/CreateClass";
+
+
+
 function App() {
 
 
   // To carry the whole classes 
   const [classes, setClasses] = useState([]);
 
-  // The state for header
-  const isLoggedIn = localStorage.getItem('token');
+  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('token'));
+
+  const [isHomePage, setIsHomePage] = useState(true); 
+  const [isRegPage, setIsRegPage] = useState(false); 
+  const [isLoginPage, setIsLoginPage] = useState(false);  
+
+  // const isLoggedIn = localStorage.getItem('token');
   const role = localStorage.getItem('role');
-  const username = localStorage.getItem('username');
+  const message = localStorage.getItem('message');
 
   return (
     <div className="App">
       <div className="content-wrap">
         <div className="header-section">
-          <Header />
+          <Header isHomePage = { isHomePage } isRegPage = { isRegPage } isLoginPage = { isLoginPage }  isLoggedIn = { isLoggedIn } role = { role }  message = { message } />
         </div>
         <div className='display'>
             <Switch>
               <Route exact path="/"> 
-              <Home />           
+                <Home setIsHomePage = { setIsHomePage } />           
               </Route>        
               <Route path="/login">
-                <Login />
+                <Login setIsLoggedIn = { setIsLoggedIn } />
               </Route> 
-              <Route path="/logout" component={Logout} />
+              <Route path="/logout">
+                <Logout 
+                setIsLoggedIn = { setIsLoggedIn } 
+                setIsHomePage = { setIsHomePage }  
+                setIsRegPage = { setIsRegPage }  
+                setIsLoginPage = { setIsLoginPage }  
+                />
+              </Route> 
               <Route path="/register">
                 <Register />
               </Route> 

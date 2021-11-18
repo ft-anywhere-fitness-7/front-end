@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function Register () {
+export default function Register (props) {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -31,6 +31,7 @@ export default function Register () {
         } else {
             setSubmitted(true);
             setError(false);
+            
         }
     };
 

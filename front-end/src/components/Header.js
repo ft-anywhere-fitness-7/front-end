@@ -4,24 +4,27 @@ import { Link } from 'react-router-dom';
 import '../CSS/Header.css';
 
 
-const Header = (props) => {
-    // const { role, isLoggedIn } = props;
-
-    const isLoggedIn = true;
-    const role = "instructor";
-
+const Header = (props) => {    
+   
     return(
         <nav className="nav-bar">
             <div className="left-links">
-                <Link className="link" to='/'>Home</Link>
-                {!isLoggedIn && <Link className="link" to='/classes'>Our Classes</Link>}
+                <Link className="link" to='/'>Anywhere Fitness</Link>
+             
             </div>
             <div className="right-links">
-                {!isLoggedIn && <Link className="link" to='/register'>Signup</Link>}
-                {!isLoggedIn && <Link className="link" to='/login'>Login</Link>}               
-                {(role === 'instructor' && isLoggedIn) && <Link className="link" to='/create'>Create a Class</Link>}  
-                {/* {(role === 'instructor' && isLoggedIn) && <Link className="link" to='/classes'>Classes</Link>} */}
-                {isLoggedIn && <Link className="link" to='/logout'>Logout</Link>}
+                {(props.isLoginPage && !props.isLoggedIn ) && 
+                    <div className="link"  > <span>Need a account? &nbsp; </span> <Link to='/register' >Register</Link></div>}
+                {(!props.isLoginPage && !props.isLoggedIn ) &&  
+                    <div className="link" > <span>Already a member? &nbsp; </span> <Link to='/login' >  Login </Link> </div>}                
+                                     
+                {(props.role === 'instructor' && props.isLoggedIn) && 
+                    <Link className="link" to='/create'>Create a Class</Link>}  
+              
+                {props.isLoggedIn && 
+                    <Link className="link" to='/logout'>Logout</Link>}
+
+              
                      
             </div>
         </nav>
