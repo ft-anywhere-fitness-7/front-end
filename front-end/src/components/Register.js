@@ -107,18 +107,17 @@ export default function Register (props) {
                         <option value ='instructor'>Instructor</option>                        
                     </select>
                 </label>
-                {/* <p>Please key in auth_code, if you are a instructor</p> */}
-                <label className="form-label"> Auth_code:
-                    <select
-                    // className ="form-role"
-                    onChange={handleChange}
-                    value = {newUser.auth_code}
-                    name = 'auth_code'
-                    >
-                        <option value =''>--instructor auth_code--</option>                        
-                        <option value ='auth_instructor_123'>auth_code</option>
-                    </select>
+                <p>As a instructor, please type your auth_code to be registered</p>
+                 <label> Auth_code:
+                    <input 
+                        type="text"
+                        name="auth_code"
+                        placeholder="auth_instructor_123"
+                        value={newUser.auth_code}
+                        onChange={handleChange}
+                    />
                 </label>
+
                 <button onClick={handleSubmit} className="btn" type="submit">Submit</button>
             </div>
         </form>
