@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory, Link } from 'react-router-dom';
 import '../CSS/Register.css';
 
 export default function Register (props) {
@@ -10,21 +11,20 @@ export default function Register (props) {
     const [submitted, setSubmitted] = useState(false);
     const [error, setError] = useState(false);
 
-    const handleUsername = evt => {
-        setUsername(evt.target.value);
-        setSubmitted(false);
-    };
+    const { push } = useHistory();
 
-    const handlePassword = evt => {
-        setPassword(evt.target.value);
-        setSubmitted(false);
-    };
+    const [newUser, setNewUser] = useState({
+        username: '',
+        password: '',
+        department: ''
+    })
 
-    const handleRole = evt => {
-        setRole(evt.target.value);
-        setSubmitted(false);
+    const handleChange = (e) => {
+        setNewUser({
+            ...newUser,
+            [e.target.name]: e.target.value
+        })
     }
-
     const handleSubmit = evt => {
         evt.preventDefault();
         if (username === '' || password === ''){
@@ -71,26 +71,23 @@ export default function Register (props) {
                     <input
                     className ="form-input"
                     value = {username}
-                    onChange = {handleUsername}
+                    onChange={handleChange}
                     name = 'username'
                     type ='text'
                     placeholder = 'Please enter a username'
                     />
                 </label>
-                <label className="form-label">Password
-                    <input 
-                    className ="form-input"
-                    value = {password}
-                    onChange = {handlePassword}
-                    name = 'password'
-                    type = 'password'
-                    placeholder = 'Please enter a password'
-                    />
+                <label> Department:
+                    <select name="department" onChange={handleChange}>
+                        <option value="">---Select your role---</option>
+                        <option value="buyer">Buyer</option>
+                        <option value="seller">Seller</option>
+                    </select>
                 </label>
                 <label className="form-label">Role
                     <select
                     className ="form-role"
-                    onChange = {handleRole}
+                    onChange={handleChange}
                     value = {role}
                     name = 'role'
                     >
