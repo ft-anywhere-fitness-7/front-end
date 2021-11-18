@@ -9,6 +9,7 @@ const Header = (props) => {
         <nav className="nav-bar">
             <div className="left-links">
                 <Link className="link" to='/'>Anywhere Fitness</Link>
+                <Link className="link" to='/classes'>Browse Classes</Link>
              
             </div>
             <div className="right-links">
