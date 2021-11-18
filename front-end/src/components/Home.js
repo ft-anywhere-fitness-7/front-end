@@ -10,7 +10,6 @@ export default function Home(props) {
 
     const handleChange = (e) => {
         props.setHomePage(false);
-
     }
     
     return(

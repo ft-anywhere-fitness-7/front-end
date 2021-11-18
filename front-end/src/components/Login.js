@@ -5,7 +5,7 @@ import Header from './Header';
 // can not replace real url in post, figure out later
 import { BASE_URL, API_KEY } from '../utils/URL';  
 
-console.log('BASE_URL: ', BASE_URL);
+// console.log('BASE_URL: ', BASE_URL);
 
 export default function Login (props){
         const { setIsLoggedIn } = props; 

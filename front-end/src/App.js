@@ -16,6 +16,7 @@ function App() {
 
   // To carry the whole classes 
   const [classes, setClasses] = useState([]);
+  const [users, setUsers] = useState([]);
 
   const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('token'));
 

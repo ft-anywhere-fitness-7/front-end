@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 import '../CSS/Header.css';
 
-
 const Header = (props) => {    
    
     return(
@@ -13,6 +12,7 @@ const Header = (props) => {
              
             </div>
             <div className="right-links">
+
                 {(props.isLoginPage && !props.isLoggedIn ) && 
                     <div className="link"  > <span>Need a account? &nbsp; </span> <Link to='/register' >Register</Link></div>}
                 {(!props.isLoginPage && !props.isLoggedIn ) &&  
@@ -22,9 +22,7 @@ const Header = (props) => {
                     <Link className="link" to='/create'>Create a Class</Link>}  
               
                 {props.isLoggedIn && 
-                    <Link className="link" to='/logout'>Logout</Link>}
-
-              
+                    <Link className="link" to='/logout'>Logout</Link>}              
                      
             </div>
         </nav>

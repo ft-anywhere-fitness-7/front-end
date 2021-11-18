@@ -23,9 +23,10 @@ export default function Register (props) {
             [e.target.name]: e.target.value
         })
     }
+
     const handleSubmit = evt => {
         evt.preventDefault();
-        console.log('I am click the register button'); 
+        
         axios.post(`https://ft-anywherefitness-7.herokuapp.com/api/auth/register`, newUser)
             .then(resp => {
                 console.log('resp.data in Register.js: ', resp.data);
@@ -96,26 +97,25 @@ export default function Register (props) {
                 </label>
                 <label className="form-label">Role:
                     <select
-                    className ="form-role"
+                    // className ="form-role"
                     onChange={handleChange}
                     value = {newUser.role}
                     name = 'role_type'
                     >
                         <option value =''>--select an option--</option>
                         <option value ='client'>Client</option>
-                        <option value ='instructor'>Instructor</option>
-                        
+                        <option value ='instructor'>Instructor</option>                        
                     </select>
                 </label>
                 {/* <p>Please key in auth_code, if you are a instructor</p> */}
-                <label className="form-label"> Instructor Auth_code:
+                <label className="form-label"> Auth_code:
                     <select
-                    className ="form-role"
+                    // className ="form-role"
                     onChange={handleChange}
                     value = {newUser.auth_code}
                     name = 'auth_code'
                     >
-                        <option value =''>--select an auth_code--</option>                        
+                        <option value =''>--instructor auth_code--</option>                        
                         <option value ='auth_instructor_123'>auth_code</option>
                     </select>
                 </label>
