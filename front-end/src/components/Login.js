@@ -19,13 +19,15 @@ export default function Login (props){
         }
 
         const handleSubmit = (e) => {
-            e.preventDefault();
-            console.log('I am click the login button'); 
+            e.preventDefault();            
             axios.post(`https://ft-anywherefitness-7.herokuapp.com/api/auth/login`, login)  
-                .then(resp => {
-                    // debugger
-                    console.log('resp.data.token: ', resp.data.token);
-                    
+                .then(resp => {                    
+                    console.log('resp.data: ', resp.data);
+                    console.log('props in Login:', props);
+                    localStorage.setItem('token', resp.data.token);
+                    localStorage.setItem('role', resp.data.role);
+                    localStorage.setItem('message', resp.data.message);
+                    push('/classes')
                 })
                 .catch(err => {
                     console.log(err);                
