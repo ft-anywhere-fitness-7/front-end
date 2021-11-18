@@ -28,8 +28,8 @@ const Footer = () => {
                         </ul>
                     </div>
                     <hr />
-                    <div className="row">
-                        <p className="col-sm copyright">
+                    <div className="copyright">
+                        <p className="col-sm">
                             &copy;{new Date().getFullYear()} Anywhere Fitness | All rights reserved | Terms of Service | Privacy
                         </p>
                     </div>
