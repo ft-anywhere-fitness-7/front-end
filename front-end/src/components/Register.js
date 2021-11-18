@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory, Link } from 'react-router-dom';
 import '../CSS/Register.css';
+import 
 
 export default function Register (props) {
 
@@ -16,7 +17,7 @@ export default function Register (props) {
     const [newUser, setNewUser] = useState({
         username: '',
         password: '',
-        department: ''
+        role: ''
     })
 
     const handleChange = (e) => {
@@ -27,6 +28,7 @@ export default function Register (props) {
     }
     const handleSubmit = evt => {
         evt.preventDefault();
+
         if (username === '' || password === ''){
             setError(true);
         } else {
