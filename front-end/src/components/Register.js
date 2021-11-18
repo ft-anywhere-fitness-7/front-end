@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../CSS/Register.css';
 
 export default function Register (props) {
 
@@ -54,7 +55,7 @@ export default function Register (props) {
 
 
     return (
-        <form className="form container" >
+        <form className="form-container" >
             <div className="form-group submit">
                 <h2>Register here!</h2>
 
@@ -64,10 +65,11 @@ export default function Register (props) {
                 </div>
             </div>
             <div className="form-group submit">
-                <h4>Enter information below</h4>
+                <h6>Enter information below</h6>
 
-                <label>Username
+                <label className="form-label">Username
                     <input
+                    className ="form-input"
                     value = {username}
                     onChange = {handleUsername}
                     name = 'username'
@@ -75,8 +77,9 @@ export default function Register (props) {
                     placeholder = 'Please enter a username'
                     />
                 </label>
-                <label>Password
+                <label className="form-label">Password
                     <input 
+                    className ="form-input"
                     value = {password}
                     onChange = {handlePassword}
                     name = 'password'
@@ -84,15 +87,16 @@ export default function Register (props) {
                     placeholder = 'Please enter a password'
                     />
                 </label>
-                <label>Role
+                <label className="form-label">Role
                     <select
+                    className ="form-role"
                     onChange = {handleRole}
                     value = {role}
                     name = 'role'
                     >
                         <option value =''>--select an option--</option>
-                        <option value ='student'>student</option>
-                        <option value ='instructor'>instructor</option>
+                        <option value ='student'>Student</option>
+                        <option value ='instructor'>Instructor</option>
                     </select>
                 </label>
                 <button onClick={handleSubmit} className="btn" type="submit">Submit</button>
