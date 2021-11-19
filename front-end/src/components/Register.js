@@ -63,9 +63,19 @@ export default function Register (props) {
         )
     }
 
-    return (
-        <form className="register-container" >
-            <div className="register-here">
+    return ( <>
+
+            <nav className="nav-bar">
+                <div className="left-links">
+                    <Link className="link" to='/'>Anywhere Fitness</Link>                             
+                </div>
+                <div className="right-links">                  
+                    { !props.isLoggedIn && <div className="member" >  <Link className="link"  to='/login'>  Login </Link> </div>}  
+                </div>
+            </nav>
+
+        <form className="form-container" >
+            <div className="form-group submit">
                 <h2>Register here!</h2>
 
                 <div className="messages">
@@ -73,12 +83,12 @@ export default function Register (props) {
                     {successMessage()}
                 </div>
             </div>
-            <div className="register-inputs">
-                <h6 className="enter-information">Enter information below</h6>
+            <div className="form-group submit">
+                <h6>Enter information below</h6>
 
-                <label className ="register-inputs">Username:
+                <label className="form-label">Username:
                     <input
-                    className ="register-inputs"
+                    className ="form-input"
                     value = {newUser.username}
                     onChange={handleChange}
                     name = 'username'
@@ -86,20 +96,18 @@ export default function Register (props) {
                     placeholder = 'Please enter a username'
                     />
                 </label>
-                <label className ="register-inputs"> Password:
+                <label> Password:
                     <input 
                         type="password"
                         name="password"
-                        className="register-inputs"
                         placeholder="Enter your password"
                         value={newUser.password}
                         onChange={handleChange}
                     />
                 </label>
-                <label className ="register-inputs">Role:
+                <label className="form-label">Role:
                     <select
                     // className ="form-role"
-                    className ="register-inputs"
                     onChange={handleChange}
                     value = {newUser.role}
                     name = 'role_type'
@@ -109,8 +117,8 @@ export default function Register (props) {
                         <option value ='instructor'>Instructor</option>                        
                     </select>
                 </label>
-                <p className ="register-inputs">As a instructor, please type your auth_code to be registered</p>
-                 <label className ="register-inputs"> Auth_code:
+                <p>As a instructor, please type your auth_code to be registered</p>
+                 <label> Auth_code:
                     <input 
                         type="text"
                         name="auth_code"
@@ -120,8 +128,8 @@ export default function Register (props) {
                     />
                 </label>
 
-                <button onClick={handleSubmit} className ="register-button" type="submit">Submit</button>
+                <button onClick={handleSubmit} className="btn" type="submit">Submit</button>
             </div>
         </form>
-    )
+    </>)
 }

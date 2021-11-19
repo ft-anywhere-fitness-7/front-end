@@ -3,7 +3,6 @@ import { useHistory } from 'react-router-dom'
 
 const Logout = (props)=> {
     
-    console.log('props in Logout.js: ', props);
     console.log('useHistory: ', useHistory());
 
     const { push } = useHistory();
@@ -12,9 +11,7 @@ const Logout = (props)=> {
     localStorage.removeItem("role");
     localStorage.removeItem("message");
     props.setIsLoggedIn(localStorage.getItem('token'));
-    props.setIsLoginPage(true);
-    props.setIsRegPage(false);
-    props.setIsHomePage(false);
+    
 
     push ("/login");       
        
