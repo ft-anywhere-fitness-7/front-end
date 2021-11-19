@@ -1,18 +1,18 @@
 import { useEffect, useState } from 'react';
 import axiosWithAuth from '../utils/axiosWithAuth';
 import ClassListSession from './ClassListSession';
+import ClassFooter from './ClassFooter';
 import { Link } from 'react-router-dom';
 
 export default function ClassList (props) {
-    // const { classes, setClasses } = props;
-    const [classes, setClasses] = useState([])   
+    const { classes, setClasses } = props;
+    
     useEffect(() => {
 
         axiosWithAuth()
             .get('/classes/')          
-            .then (resp => {
-                // debugger
-                console.log('resp in UserList.js: ', resp);
+            .then (resp => {                
+                console.log('resp in ClassList.js: ', resp);
                 setClasses(resp.data);
             })
             .catch(err => {
@@ -21,9 +21,8 @@ export default function ClassList (props) {
 
     }, []);
 
-    return(
-        <div>
-            <nav className="nav-bar">
+    return(<>
+        <nav className="nav-bar">
             <div className="left-links">
             <Link className="link" to='/'>Anywhere Fitness &nbsp; {props.message}  </Link>                                                 
             </div>
@@ -33,11 +32,25 @@ export default function ClassList (props) {
                 {props.isLoggedIn && <Link className="link" to='/logout'>Logout</Link>}                       
             </div>
             </nav>
-            {
-                classes.map(session=><ClassListSession key={session.id} session={session}/>)
-            }
-        </div>
+        <div className="col">
+            <table className="table table-striped table-hover">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Intensity</th>
+                    <th>Instructor</th>
+                    <th>Location</th>
+                    <th></th>
+                </tr>
+                </thead>
 
-        
-    );
+                <tbody>
+                    {
+                        classes.map(session=><ClassListSession key={session.id} session={session}/>)
+                    }
+                </tbody>
+                </table>
+            <ClassFooter />
+        </div>
+    </>);
 }
